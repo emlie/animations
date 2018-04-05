@@ -1,0 +1,124 @@
+:root {
+  /* fonts */
+  --main-font-family: 'Open Sans', sans-serif;
+  --heading-font-family: 'Montserrat', sans-serif;
+  --heading-font-serif-1: 'Playfair Display', serif;
+  --heading-font-serif-2: 'Lora', serif;
+
+  /* colors */
+  --dark-primary-color: #0288D1;
+  --light-primary-color: #B3E5FC;
+  --primary-color: #03A9F4;
+  --accent-color: #FF9800;
+  --text-icons-white: #FFFFFF;
+  --primary-text: #212121;
+  --secondary-text: #757575;
+  --divider-color: #BDBDBD;
+
+  --red: #E85454;
+  --yellow-lighter: #FCECA4;
+  --blue: #90C3D4;
+
+  --almost-white: #f7f7f7;
+  --gray-darker: #696969;
+  --gray: #ccc;
+  --gray-lighter: #E8E8E8;
+  --gray-lightest: #F0F0F0;
+  --almost-black: #282828;
+
+  /* sizes */
+  --space: 1rem;
+
+  /* font-weights */
+  --light: 300;
+  --medium: 600;
+  --heavy: 900;
+
+  /* transitions */
+  --smooth: ease-in-out 0.25s;
+  --smooth-border: border 0.5s ease-in-out;
+
+  /* box-shadows */
+  --smooth-light-shadow: 0 2px 4px var(--almost-white), 0 2px 4px rgba(0,0,0,0.24);
+  --smooth-dark-shadow: 0 2px 4px var(--almost-white), 0 2px 4px rgba(0,0,0,0.8);
+  --smooth-big-dark-shadow: 0 2px 8px var(--almost-white), 0 2px 8px rgba(0,0,0,0.9);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  box-sizing: border-box;
+  font-size: 62.5%; /* 1 rem = 10 px */
+}
+
+body {
+  background: var(--almost-white);
+}
+
+
+
+
+
+.holder {
+  width: 100vw;
+  padding: calc(var(--space)*5) 0 0 0;
+}
+
+.container {
+  width: 50vw;
+  height: 50rem;
+  margin: calc(var(--space)*2) auto 0 auto;
+  padding: calc(var(--space)*0);
+  border: 1px solid transparent;
+  overflow: hidden;
+}
+
+.isometric-grid {
+  width: 100%;
+  height: 141%;
+  border: 1px solid transparent;
+  display: grid;
+  grid-template: repeat(5, 1fr) / repeat(5, 1fr);
+  transform: translateX(-0.001rem) translateY(-10.2rem) skewY(-20deg);
+}
+
+.dark-blue {
+  grid-area: span 1;
+  transition: var(--smooth);
+  background: var(--dark-primary-color);
+}
+
+.neut-blue {
+  grid-area: span 1;
+  transition: var(--smooth);
+  background: var(--primary-color);
+}
+
+.light-blue {
+  grid-area: span 1;
+  transition: var(--smooth);
+  background: var(--light-primary-color);
+}
+
+.dark-blue:hover {
+  transform: translateX(1rem) scale(1.25);
+  background: var(--red);
+  box-shadow: var(--smooth-dark-shadow);
+  border-radius: 1rem;
+  z-index: 100;
+}
+
+.neut-blue:hover {
+  transform: translateX(1rem) rotate(90deg);
+  background: var(--accent-color);
+  box-shadow: var(--smooth-dark-shadow);
+  z-index: 100;
+}
+
+.light-blue:hover {
+  transform: translateX(1rem) rotate3d(1, 2.0, 3.0, 10deg);
+  background: var(--yellow-lighter);
+  box-shadow: var(--smooth-dark-shadow);
+  z-index: 100;
+}
